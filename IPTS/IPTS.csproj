@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\PropertyChanged.Fody.2.6.0\build\PropertyChanged.Fody.props" Condition="Exists('..\packages\PropertyChanged.Fody.2.6.0\build\PropertyChanged.Fody.props')" />
+  <Import Project="..\packages\Costura.Fody.3.2.0\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.3.2.0\build\Costura.Fody.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{42E1A9B9-FF7F-4CA6-A393-14474840959C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IPTS</RootNamespace>
+    <AssemblyName>IPTS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Costura, Version=3.2.0.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.3.2.0\lib\net46\Costura.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DLL">
+      <HintPath>..\..\..\..\..\..\Thirupathi\VS Application\KCP\KCP RFID Reader\UHFReader\UHFReader\bin\Debug\DLL.dll</HintPath>
+    </Reference>
+    <Reference Include="DragonDesignSurface">
+      <HintPath>C:\Users\thirupathi.galipelli\Downloads\DesignPrint\bin\Debug\DragonDesignSurface.dll</HintPath>
+    </Reference>
+    <Reference Include="DragonFactory">
+      <HintPath>..\..\..\..\IPTSWin\IPTSWin\bin\Debug\DragonFactory.dll</HintPath>
+    </Reference>
+    <Reference Include="DragonGraphicObjects">
+      <HintPath>C:\Users\thirupathi.galipelli\Downloads\DesignPrint\bin\Debug\DragonGraphicObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsUtils">
+      <HintPath>C:\Users\thirupathi.galipelli\Downloads\DesignPrint\bin\Debug\FormsUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="LMS">
+      <HintPath>..\..\..\..\Backups\KCPIPTSWin\KCPIPTSWin\bin\Debug\LMS.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess">
+      <HintPath>..\..\..\..\Backups\KCPIPTSWin\KCPIPTSWin\bin\Debug\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyChanged, Version=2.6.0.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
+      <HintPath>..\packages\PropertyChanged.Fody.2.6.0\lib\net452\PropertyChanged.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="S7.Net">
+      <HintPath>..\..\..\..\Backups\KCPIPTSWin\KCPIPTSWin\bin\Debug\S7.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TraceTool">
+      <HintPath>..\..\..\..\Backups\KCPIPTSWin\KCPIPTSWin\bin\Debug\TraceTool.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DB1.cs" />
+    <Compile Include="DB2.cs" />
+    <Compile Include="DBLayer.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChallanPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChallanPrint.Designer.cs">
+      <DependentUpon>frmChallanPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManualERPUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManualERPUpdate.Designer.cs">
+      <DependentUpon>frmManualERPUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaterialMovement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialMovement.Designer.cs">
+      <DependentUpon>frmMaterialMovement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOracleTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOracleTest.Designer.cs">
+      <DependentUpon>frmOracleTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistration.Designer.cs">
+      <DependentUpon>frmRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTareWeight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTareWeight.Designer.cs">
+      <DependentUpon>frmTareWeight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper.cs" />
+    <Compile Include="LedHelper.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MTWeight.cs" />
+    <Compile Include="OracleBLLayer.cs" />
+    <Compile Include="OracleHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RfidHelper.cs" />
+    <Compile Include="SerialPortCommunication.cs" />
+    <Compile Include="SQLHelper.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChallanPrint.resx">
+      <DependentUpon>frmChallanPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManualERPUpdate.resx">
+      <DependentUpon>frmManualERPUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialMovement.resx">
+      <DependentUpon>frmMaterialMovement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOracleTest.resx">
+      <DependentUpon>frmOracleTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistration.resx">
+      <DependentUpon>frmRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTareWeight.resx">
+      <DependentUpon>frmTareWeight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Icon.ico" />
+    <Content Include="Images\31520.png" />
+    <Content Include="Images\A1.png" />
+    <Content Include="Images\B2.png" />
+    <None Include="Resources\reset1.png" />
+    <None Include="Resources\reset.png" />
+    <None Include="Resources\shrink-png-windows-4.png" />
+    <None Include="Resources\Unselected.bmp" />
+    <None Include="Resources\Single.bmp" />
+    <None Include="Resources\Selected.bmp" />
+    <None Include="Resources\NoSingle.bmp" />
+    <None Include="Resources\bitmap1.bmp" />
+    <None Include="Resources\bitmap_l.bmp" />
+    <None Include="Resources\unnamed.png" />
+    <None Include="Images\Configuration.png" />
+    <None Include="Images\btnSave.png" />
+    <None Include="Images\btnCance.png" />
+    <None Include="Images\cancel-146131_640.png" />
+    <Content Include="Images\EmptyTruck.png" />
+    <Content Include="Images\ErrorIcon.png" />
+    <Content Include="Images\FilledTruck.png" />
+    <Content Include="Images\free-vector-clarity-shutdown-icon_100692_Clarity_shutdown_icon.png" />
+    <None Include="Images\Gross Weight.png" />
+    <Content Include="Images\Hooter1.png" />
+    <Content Include="Images\Hooter2.png" />
+    <Content Include="Images\HooterBlock.png" />
+    <Content Include="Images\Icon.ico" />
+    <None Include="Images\Tare Weight.png" />
+    <None Include="Images\MaterialMovement.png" />
+    <None Include="Images\images.png" />
+    <Content Include="Images\IPTSSetting.png" />
+    <Content Include="Images\KCP_Logo.png" />
+    <Content Include="Images\Laterite.png" />
+    <Content Include="Images\Laterite1.png" />
+    <Content Include="Images\LimeStone.png" />
+    <Content Include="Images\LimeStone1.png" />
+    <Content Include="Images\LoginBlue.png" />
+    <Content Include="Images\LoginPassword.png" />
+    <Content Include="Images\LoginPassword2.png" />
+    <Content Include="Images\LoginUser.png" />
+    <Content Include="Images\LoginUser2.png" />
+    <Content Include="Images\LoginUser3.png" />
+    <Content Include="Images\LoginUser4.png" />
+    <Content Include="Images\LoginUser5.png" />
+    <None Include="Images\ok.jpg" />
+    <Content Include="Images\Others.png" />
+    <Content Include="Images\Others1.png" />
+    <Content Include="Images\PLC_Connected.png" />
+    <Content Include="Images\PLC_NotConnected.png" />
+    <None Include="Images\Power_-_Restart.png" />
+    <None Include="Images\Print Challan.png" />
+    <None Include="Images\plusimage.png" />
+    <Content Include="Images\Reject.png" />
+    <Content Include="Images\Reject1.png" />
+    <Content Include="Images\RFID1.png" />
+    <Content Include="Images\RFID_Connected.png" />
+    <Content Include="Images\RFID_Disconnected.png" />
+    <None Include="Images\Settings.png" />
+    <Content Include="Images\SignodeLogoTransparent_WithShade.png" />
+    <Content Include="Images\signode_logo_4.jpg" />
+    <Content Include="Images\StackLight_GreenOn.png" />
+    <Content Include="Images\StackLight_Off.png" />
+    <Content Include="Images\StackLight_RedOn.png" />
+    <Content Include="Images\TareWeight.png" />
+    <Content Include="Images\TareWeight1.png" />
+    <Content Include="Images\TrafficlLight_Background.png" />
+    <None Include="Images\Truck Registration.png" />
+    <Content Include="Images\TruckRegistration.png" />
+    <Content Include="Images\tst.png" />
+    <Content Include="Images\tst2.png" />
+    <Content Include="Images\tst3.png" />
+    <Content Include="Images\UserIcon4.png" />
+    <Content Include="Images\WeighBridge_Connected.png" />
+    <Content Include="Images\WeighBridge_Disconnected.png" />
+    <Content Include="Images\Yard.png" />
+    <Content Include="Images\Yard1.png" />
+    <Content Include="Images\Yard_New.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Fody.3.3.2\build\Fody.targets" Condition="Exists('..\packages\Fody.3.3.2\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.3.3.2\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.3.3.2\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.3.2.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.3.2.0\build\Costura.Fody.props'))" />
+    <Error Condition="!Exists('..\packages\PropertyChanged.Fody.2.6.0\build\PropertyChanged.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PropertyChanged.Fody.2.6.0\build\PropertyChanged.Fody.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
